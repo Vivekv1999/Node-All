@@ -1,0 +1,1 @@
+#19  when dat get from url is show undefine but sfter some try and refresh it get ready
