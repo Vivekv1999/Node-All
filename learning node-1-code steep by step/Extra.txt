@@ -1,0 +1,3 @@
+#10 node js is Async   --- wait nay kare
+#11  staus code thoduk
+#12 input from comandline

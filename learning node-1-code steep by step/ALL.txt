@@ -1,0 +1,7 @@
+1.  -npm i nodemon -g
+    mack and linux ma --globly package install jkrava --sudo lagavavu pade
+    --run karava --nodemon filename
+    
+
+2. mkdir   newfolder banavav
+3. type>nul  index.js  ------file banavavava

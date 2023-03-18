@@ -1,0 +1,1 @@
+#14 ->buffer-->ek temparory memory location -file systm par operation karva no en emomory joyi--that is buffer
