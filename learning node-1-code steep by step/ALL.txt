@@ -6,6 +6,11 @@
 2. mkdir   newfolder banavav
 3. type>nul  index.js  ------file banavavava
 
+4.#27   mongodb install
+        set enviroument variable
+
+5.#30   npm i mongodb
+
 
 --> nodemon : File C:\Users\HP\AppData\Roaming\npm\nodemon.ps1 cannot be loaded because running scripts is disabled on this system. For more 
 information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
