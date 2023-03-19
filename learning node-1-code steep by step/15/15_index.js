@@ -2,32 +2,26 @@ const express = require('express')
 const path=require('path')
 
 const app = express()
-const publicPath=path.join(__dirname,"public")
-
-// app.use(express.static(publicPath))
-
-app.set("view engine","ejs")
-
-app.get("",(req,res)=>{
-res.sendFile(`${publicPath}/index.html`)
-})
-app.get("/about",(_,res)=>{
-res.sendFile(`${publicPath}/about.html`)
-})
-app.get("/profile",(_,res)=>{
-    const user={
-        name:"nil",
-        email:"nil@gmail.com",
-        city:"praug"
+const reqfilter=(req,res,next)=>{
+    console.log("reqfilter");
+    if(!req.query.age){ 
+        res.send("pleae provide age")   //**if we send this --res,send then we can not set next() */
     }
-res.render("profile",{user})
+    else if(req.query.age<18){ 
+        res.send("Yuo can not access this page")   
+    }
+    else{
+        next()
+    }
+}
+
+app.use(reqfilter)
+
+app.get("/",(req,res)=>{
+    res.send("welcoe to home page")
 })
-
-app.get("*",(_,res)=>{
-    res.sendFile(`${publicPath}/PageNotFound.html`)
+app.get("/user",(req,res)=>{
+    res.send("welcoe to User page")
 })
-
-console.log(publicPath);
-
 
 app.listen(4000)
