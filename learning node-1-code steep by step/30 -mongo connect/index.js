@@ -1,21 +1,17 @@
-const { MongoClient } = require('mongodb');
-// const  MongoClient  = require('mongodb').MongoClient   //--both line are same
+const dbconnect=require('./Mongodb')
 
-const url="mongodb://0.0.0.0:27017"     // at here in video--> const url="mongodb://localhost:27017"
-                                        //but thi sis wrong eeror occured
-                                        //---> MongoServerSelectionError: connect ECONNREFUSED ::1:27017
-const client= new MongoClient(url)
+//-->1st method
+// dbconnect().then((res)=>{
+//     res.find().toArray().then((data)=>{
+//         console.log(data);
+//     })
+// })
 
-// const database='e-commerce'
-
-async function getData(){
-    let result= await client.connect()
-    let db= result.db('e-commerce')
-    let collection=db.collection('products')
-    console.log("connet succesully");
-    let response= await collection.find({}).toArray()
-    console.log(response);
+//--->second way to handle promise
+const main = async () => {
+    let data = await dbconnect()
+    data = await data.find().toArray()
+    console.log(data);
 }
 
-
-getData();
+main()
