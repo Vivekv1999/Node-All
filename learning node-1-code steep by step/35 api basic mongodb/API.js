@@ -18,4 +18,25 @@ app.post("/",async (req,res)=>{
     res.send(result)    //postman ma niche --or---browese ma send karse
 })
 
+
+//1.put--->static way to put data
+// app.put("/",async (req,res)=>{
+//     const data=await dbconnect()
+//     let result=await data.updateOne(
+//         {name:"note 9"}             
+//         ,{$set:req.body}
+//     )
+// res.send(result)
+// })
+
+//2.put--->static way to put data
+app.put("/:name",async (req,res)=>{        // **** poatman url ni put methid ni url ma  ex. -->localhost:4000/lenovo
+    const data=await dbconnect()
+    let result=await data.updateOne(
+        {name:req.params.name}             
+        ,{$set:req.body}
+    )
+res.send(result)
+})
+
 app.listen(4000)
