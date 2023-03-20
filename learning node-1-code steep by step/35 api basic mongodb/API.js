@@ -1,5 +1,6 @@
 const express=require('express')
 const dbconnect=require('./mongodb')
+const mongodb=require("mongodb")
 
 const app=express()
 app.use(express.json())  //post method thi post amn amthi avato deta melvavaa mate
@@ -37,6 +38,15 @@ app.put("/:name",async (req,res)=>{        // **** poatman url ni put methid ni 
         ,{$set:req.body}
     )
 res.send(result)
+})
+
+///delete 
+// app.delete('/:id',async(req,res)=>{  ///***importnt check */
+app.delete('/:name',async(req,res)=>{  
+    const data=await dbconnect()
+    // const result=await data.deleteOne({_id:new mongodb.ObjectId(req.params.id)})
+    const result=await data.deleteOne({name:'lava'})
+    res.send(result)
 })
 
 app.listen(4000)
