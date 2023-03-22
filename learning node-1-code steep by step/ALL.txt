@@ -10,7 +10,8 @@
         set enviroument variable
 
 5.#30   npm i mongodb
-5#39      npm i mongoose
+6#39      npm i mongoose
+7$43   npm i multer
 
 
 --> nodemon : File C:\Users\HP\AppData\Roaming\npm\nodemon.ps1 cannot be loaded because running scripts is disabled on this system. For more 
