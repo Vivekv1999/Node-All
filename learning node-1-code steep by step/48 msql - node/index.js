@@ -7,7 +7,7 @@ const con=mysql.createConnection({
     database:"school"
 })
 
-
+//only for check database is conected or not 
 con.connect((err)=>{
     if(err){
         console.log(err,"error occured");
