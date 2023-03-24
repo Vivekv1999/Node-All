@@ -43,4 +43,41 @@ app.post('/', async (req, res) => {
     })
 })
 
+//staticaly change data
+// app.put("/",(req,res)=>{
+//     const data=["ronak",27,3]
+//     con.query("UPDATE student SET studentname =?,age =? where studentId =?", data,(error,result,fields)=>{
+//         if(error){
+//             console.log(error);
+//         }else{
+//             res.send(result)
+//         }
+//     })
+// })
+
+//Put -- data update through postman
+app.put("/:studentId",(req,res)=>{
+    const data=[req.body.studentname,req.body.age,req.params.studentId]
+    con.query("UPDATE student SET studentname =?,age =? where studentId =?", data,(error,result,fields)=>{
+        if(error){
+            console.log(error);
+        }else{
+            res.send(result)
+        }
+    })
+})
+
+app.delete("/:studentID",(req,res)=>{
+    console.log(req.params.studentID);
+    con.query("DELETE FROM student where studentID = ?", +req.params.studentID,(error,result)=>{
+        if(error) {
+            console.log(error)
+        }
+        else{
+            res.send(result)
+        }
+    })
+    
+})
+
 app.listen(4000)
