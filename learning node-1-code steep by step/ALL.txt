@@ -15,6 +15,10 @@
 8#48 npm i mysql
 
 
+project
+1.  npm i cors
+
+
 --> nodemon : File C:\Users\HP\AppData\Roaming\npm\nodemon.ps1 cannot be loaded because running scripts is disabled on this system. For more 
 information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
 At line:1 char:1
